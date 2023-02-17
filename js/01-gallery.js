@@ -6,10 +6,10 @@ const gallery = document.querySelector('.gallery');
 
 const items = [];
 
-galleryItems.forEach(element) => {
+galleryItems.forEach((element) => {
 
-    const galleryItems = document.createElement('div');
-    galleryItems.classList.add('gallery__items');
+    const galleryItem = document.createElement('div');
+    galleryItem.classList.add('gallery__items');
 
 
     const galleryLink = document.createElement('a');
@@ -23,18 +23,18 @@ galleryItems.forEach(element) => {
 
     galleryImg.src = element.preview;
 
-    galleryImg.setAttribute('data-source', element.original);
+    galleryImg.setAttribute("data-source", element.original);
 
     galleryImg.alt = element.description;
 
     galleryItem.append(galleryLink);
     galleryLink.append(galleryImg);
     items.push(galleryItem);
-};
+});
     // додавання створених елементів в галерею через розпилення
 gallery.append(...items);
 
-document.addEventListener('click', (e) => {
+document.addEventListener("click", (e) => {
     e.preventDefault();
 
     if (e.target.nodeName !== "IMG") {
